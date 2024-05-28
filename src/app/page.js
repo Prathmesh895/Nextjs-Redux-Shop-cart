@@ -17,7 +17,7 @@ export default function Cart() {
       setSuccessMessage('');
     }, 3000);
 
-    console.log('ProductId', product.id);
+    // console.log('ProductId', product.id);
   }
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export default function Cart() {
       const res = await fetch("https://fakestoreapi.com/products");
       const data = await res.json();
       setProductData(data);
-      console.log(data);
+      // console.log(data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -44,7 +44,7 @@ export default function Cart() {
             {successMessage}
           </div>
         )}
-        <div className='lg:grid grid-cols-4 my-5 mx-20    bg-gray-100'>
+        <div className='lg:grid grid-cols-4 my-5 lg:mx-20    bg-gray-100'>
           {productData.map(product => (
             <ul key={product.id} className='bg-white m-5 p-8 shadow-xl'>
               <li><img src={product.image} alt="product.image" className='w-48 h-48' /></li>
